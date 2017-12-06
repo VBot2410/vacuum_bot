@@ -41,12 +41,15 @@
 class vacuum_bot{
  public:
 vacuum_bot(ros::NodeHandle& n, std::vector<std::vector<double>>& Goals);
- private:
-void Set_Current_X(std::vector<double>& Next_Goal,
+double Set_Current_X(std::vector<double>& Next_Goal,
                         move_base_msgs::MoveBaseGoal & goal);
-void Set_Current_Y(std::vector<double>& Next_Goal,
+double Set_Current_Y(std::vector<double>& Next_Goal,
                         move_base_msgs::MoveBaseGoal & goal);
 void Set_Current_Orientation(std::vector<double>& Next_Goal,
                         move_base_msgs::MoveBaseGoal & goal);
+void Clean_Room();
+ private:
+std::vector<std::vector<double>> Goals;
+
 };
 #endif  // CATKIN_WS_SRC_VACUUM_BOT_INCLUDE_VACUUM_BOT_H_

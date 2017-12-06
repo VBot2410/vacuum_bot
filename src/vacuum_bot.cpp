@@ -33,12 +33,36 @@
 #include "../include/vacuum_bot.h"
 
 vacuum_bot::vacuum_bot(ros::NodeHandle& n,
-            std::vector<std::vector<double>>& Goals) {
+            std::vector<std::vector<double>>& _Goals) {
+Goals=_Goals;
+}
+double vacuum_bot::Set_Current_X(std::vector<double>& Next_Goal,
+                          move_base_msgs::MoveBaseGoal & goal) {
+goal.target_pose.pose.position.x = Next_Goal.at(0);
+return Next_Goal.at(0);
+}
+
+double vacuum_bot::Set_Current_Y(std::vector<double>& Next_Goal,
+                          move_base_msgs::MoveBaseGoal & goal) {
+goal.target_pose.pose.position.y = Next_Goal.at(1);
+return Next_Goal.at(1);
+}
+
+void vacuum_bot::Set_Current_Orientation(std::vector<double>& Next_Goal,
+                                   move_base_msgs::MoveBaseGoal & goal) {
+auto Angle_Degrees = Next_Goal.at(2);
+auto Radians = Angle_Degrees*(3.14159/180);
+auto quaternion = tf::createQuaternionFromYaw(Radians);
+geometry_msgs::Quaternion qMsg;
+tf::quaternionTFToMsg(quaternion, qMsg);
+goal.target_pose.pose.orientation = qMsg;
+}
+
+void vacuum_bot::Clean_Room() {
   //  Tell the action client that we want to spin a thread by default
   actionlib::SimpleActionClient<move_base_msgs::MoveBaseAction>
                                           ac("move_base", true);
-
-  //  Wait for the action server to come up
+  // Wait for the action server to come up
   while (!ac.waitForServer(ros::Duration(35.0))) {
     ROS_INFO("Waiting for the move_base action server to come up");
   }
@@ -60,24 +84,5 @@ vacuum_bot::vacuum_bot(ros::NodeHandle& n,
                                 Next_Goal.at(1), Next_Goal.at(2));
   else
     ROS_INFO("Robot failed to Reach the Goal");
-}
-}
-void vacuum_bot::Set_Current_X(std::vector<double>& Next_Goal,
-                          move_base_msgs::MoveBaseGoal & goal) {
-goal.target_pose.pose.position.x = Next_Goal.at(0);
-}
-
-void vacuum_bot::Set_Current_Y(std::vector<double>& Next_Goal,
-                          move_base_msgs::MoveBaseGoal & goal) {
-goal.target_pose.pose.position.y = Next_Goal.at(1);
-}
-
-void vacuum_bot::Set_Current_Orientation(std::vector<double>& Next_Goal,
-                                   move_base_msgs::MoveBaseGoal & goal) {
-auto Angle_Degrees = Next_Goal.at(2);
-auto Radians = Angle_Degrees*(3.14159/180);
-auto quaternion = tf::createQuaternionFromYaw(Radians);
-geometry_msgs::Quaternion qMsg;
-tf::quaternionTFToMsg(quaternion, qMsg);
-goal.target_pose.pose.orientation = qMsg;
+ }
 }

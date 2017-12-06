@@ -48,5 +48,6 @@ std::vector<std::vector<double>> Goals{{4.5, 0.1, 90}, {4.6, 0.5, 180},
   ros::init(argc, argv, "Clean");
   ros::NodeHandle n;
   vacuum_bot Bot(n, Goals);
+  Bot.Clean_Room();
   return 0;
 }
