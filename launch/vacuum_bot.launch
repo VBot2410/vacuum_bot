@@ -1,0 +1,32 @@
+<!-- Launches Clean node and gazebo ,amcl, rviz launch files -->
+
+<launch>
+   <arg name="record" default="false"/>  
+  <!--  Launch turtle bot world  -->
+  <include file="$(find vacuum_bot)/launch/vacuum_bot_world.launch">
+    <arg name="world_file" value="$(find vacuum_bot)/world/hotel_room.world"/>
+  </include>
+
+  <!-- Launch navigation stack with amcl -->
+  <include file="$(find vacuum_bot)/launch/vacuum_bot_amcl.launch">
+    <arg name="map_file" value="$(find vacuum_bot)/map/hotel_room_map.yaml"/>
+  </include>
+
+  <!-- Launch rviz -->
+  <include file="$(find vacuum_bot)/launch/vacuum_bot_rviz.launch">
+  </include>
+
+  <node name="Clean"
+        pkg="vacuum_bot"
+        type="Clean"
+	launch-prefix="gnome-terminal --command" 
+     	output="screen">
+     </node>
+
+  <node name="Rosbag_Record"
+        pkg="rosbag"
+        type="record"
+        args="-a -O $(find vacuum_bot)/results/rosbag_recording.bag -x /camera/(.*)"
+        if="$(arg record)" />
+
+</launch> 
