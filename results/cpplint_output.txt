@@ -1,0 +1,4 @@
+Done processing ./include/vacuum_bot.h
+Done processing ./src/main.cpp
+Done processing ./src/vacuum_bot.cpp
+Total errors found: 0
