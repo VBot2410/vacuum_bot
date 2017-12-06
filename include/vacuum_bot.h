@@ -29,6 +29,8 @@
  */
 
 /* --Includes-- */
+#ifndef CATKIN_WS_SRC_VACUUM_BOT_INCLUDE_VACUUM_BOT_H_
+#define CATKIN_WS_SRC_VACUUM_BOT_INCLUDE_VACUUM_BOT_H_
 #include <ros/ros.h>
 #include <move_base_msgs/MoveBaseAction.h>
 #include <actionlib/client/simple_action_client.h>
@@ -37,10 +39,14 @@
 
 
 class vacuum_bot{
-public:
-vacuum_bot(ros::NodeHandle& n,std::vector<std::vector<double>>& Goals);
-private:
-void Set_Current_X(std::vector<double>& Next_Goal,move_base_msgs::MoveBaseGoal & goal);
-void Set_Current_Y(std::vector<double>& Next_Goal,move_base_msgs::MoveBaseGoal & goal);
-void Set_Current_Orientation(std::vector<double>& Next_Goal,move_base_msgs::MoveBaseGoal & goal);
+ public:
+vacuum_bot(ros::NodeHandle& n, std::vector<std::vector<double>>& Goals);
+ private:
+void Set_Current_X(std::vector<double>& Next_Goal,
+                        move_base_msgs::MoveBaseGoal & goal);
+void Set_Current_Y(std::vector<double>& Next_Goal,
+                        move_base_msgs::MoveBaseGoal & goal);
+void Set_Current_Orientation(std::vector<double>& Next_Goal,
+                        move_base_msgs::MoveBaseGoal & goal);
 };
+#endif  // CATKIN_WS_SRC_VACUUM_BOT_INCLUDE_VACUUM_BOT_H_
