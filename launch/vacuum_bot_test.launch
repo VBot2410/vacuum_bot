@@ -1,0 +1,4 @@
+<launch>
+  <node pkg="vacuum_bot" name="Clean"  type="Clean" />
+  <test pkg="vacuum_bot" test-name="vacuum_bot_test" type="vacuum_bot_test" />
+</launch>
