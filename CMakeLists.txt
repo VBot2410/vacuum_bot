@@ -92,3 +92,25 @@ include_directories(
 ### add_library(vacuum_bot src/vacuum_bot.cpp)
 ### target_link_libraries(Clean vacuum_bot)
 
+if(CATKIN_ENABLE_TESTING)
+  find_package(rostest REQUIRED)
+
+  add_rostest_gtest(
+    vacuum_bot_test
+    launch/vacuum_bot_test.launch
+    test/vacuum_bot_test.cpp
+    test/main.cpp
+    src/vacuum_bot.cpp
+  )
+
+  target_link_libraries(
+    vacuum_bot_test
+    ${catkin_LIBRARIES}
+  )
+
+  add_dependencies(
+    vacuum_bot_test
+    Clean
+    ${catkin_EXPORTED_TARGETS}
+  )
+endif()
