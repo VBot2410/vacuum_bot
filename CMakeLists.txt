@@ -90,6 +90,5 @@ include_directories(
  target_link_libraries(Clean ${catkin_LIBRARIES})
 ## Adding class definitions
 ### add_library(vacuum_bot src/vacuum_bot.cpp)
-## Linking executable to LawnMower Library
 ### target_link_libraries(Clean vacuum_bot)
 
