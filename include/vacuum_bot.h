@@ -45,11 +45,11 @@ double Set_Current_X(std::vector<double>& Next_Goal,
                         move_base_msgs::MoveBaseGoal & goal);
 double Set_Current_Y(std::vector<double>& Next_Goal,
                         move_base_msgs::MoveBaseGoal & goal);
-void Set_Current_Orientation(std::vector<double>& Next_Goal,
-                        move_base_msgs::MoveBaseGoal & goal);
 void Clean_Room();
  private:
 std::vector<std::vector<double>> Goals;
+void Set_Current_Orientation(std::vector<double>& Next_Goal,
+                        move_base_msgs::MoveBaseGoal & goal);
 
 };
 #endif  // CATKIN_WS_SRC_VACUUM_BOT_INCLUDE_VACUUM_BOT_H_
