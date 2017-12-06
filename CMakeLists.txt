@@ -63,8 +63,8 @@ find_package(catkin REQUIRED COMPONENTS
 ## CATKIN_DEPENDS: catkin_packages dependent projects also need
 ## DEPENDS: system dependencies of this project that dependent projects also need
 catkin_package(
-#  INCLUDE_DIRS include
-#  LIBRARIES
+  INCLUDE_DIRS include
+  LIBRARIES main vacuum_bot
   CATKIN_DEPENDS roscpp rospy actionlib actionlib_msgs geometry_msgs move_base_msgs std_msgs tf
 #  DEPENDS system_lib
 )
@@ -83,3 +83,13 @@ include_directories(
 
 ## Add folders to be run by python nosetests
 # catkin_add_nosetests(test)
+
+## Declare a C++ executable
+ add_executable(Clean src/main.cpp src/vacuum_bot.cpp)
+## Specify libraries to link a library or executable target against
+ target_link_libraries(Clean ${catkin_LIBRARIES})
+## Adding class definitions
+### add_library(vacuum_bot src/vacuum_bot.cpp)
+## Linking executable to LawnMower Library
+### target_link_libraries(Clean vacuum_bot)
+
