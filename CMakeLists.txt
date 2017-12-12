@@ -64,7 +64,7 @@ find_package(catkin REQUIRED COMPONENTS
 ## DEPENDS: system dependencies of this project that dependent projects also need
 catkin_package(
   INCLUDE_DIRS include
-  LIBRARIES main vacuum_bot
+  LIBRARIES main Goals Cleaner
   CATKIN_DEPENDS roscpp rospy actionlib actionlib_msgs geometry_msgs move_base_msgs std_msgs tf
 #  DEPENDS system_lib
 )
@@ -85,7 +85,7 @@ include_directories(
 # catkin_add_nosetests(test)
 
 ## Declare a C++ executable
- add_executable(Clean src/main.cpp src/vacuum_bot.cpp)
+ add_executable(Clean src/main.cpp src/Goals.cpp src/Cleaner.cpp)
 ## Specify libraries to link a library or executable target against
  target_link_libraries(Clean ${catkin_LIBRARIES})
 ## Adding class definitions
@@ -98,9 +98,11 @@ if(CATKIN_ENABLE_TESTING)
   add_rostest_gtest(
     vacuum_bot_test
     launch/vacuum_bot_test.launch
-    test/vacuum_bot_test.cpp
+    test/Cleaner_Test.cpp
+    test/Goals_Test.cpp
     test/main.cpp
-    src/vacuum_bot.cpp
+    src/Goals.cpp
+    src/Cleaner.cpp
   )
 
   target_link_libraries(
