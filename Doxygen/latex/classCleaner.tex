@@ -1,0 +1,69 @@
+\hypertarget{classCleaner}{}\section{Cleaner Class Reference}
+\label{classCleaner}\index{Cleaner@{Cleaner}}
+
+
+\hyperlink{classCleaner}{Cleaner} class This class is a protected derived class of base class \hyperlink{classGoals}{Goals}. This class contains functions which initialize action client. This class also uses functions from \hyperlink{classGoals}{Goals} class to send goals sequentially to move\+\_\+base.  
+
+
+
+
+{\ttfamily \#include $<$Cleaner.\+h$>$}
+
+
+
+Inheritance diagram for Cleaner\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=130pt]{classCleaner__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for Cleaner\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=130pt]{classCleaner__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classCleaner_abca01c3dfb02f02c20a3ec278bb874ba}{Cleaner} (std\+::vector$<$ std\+::vector$<$ double $>$$>$ \&\+\_\+\+Goals)
+\begin{DoxyCompactList}\small\item\em Constructor for \hyperlink{classCleaner}{Cleaner} Class Takes Goal Points in \+\_\+\+Goals and stores them in a vetor of vectors named Goal\+\_\+\+Points. \end{DoxyCompactList}\item 
+void \hyperlink{classCleaner_a6a742590ac6256a15fcfaf6853fd6a97}{Clean\+\_\+\+Room} ()\hypertarget{classCleaner_a6a742590ac6256a15fcfaf6853fd6a97}{}\label{classCleaner_a6a742590ac6256a15fcfaf6853fd6a97}
+
+\begin{DoxyCompactList}\small\item\em Clean\+\_\+\+Room Initializes action client to communicate with move\+\_\+base This function sends goals to move\+\_\+base. \end{DoxyCompactList}\item 
+virtual \hyperlink{classCleaner_a86f390999d60ee10a0e53a5946369d9d}{$\sim$\+Cleaner} ()\hypertarget{classCleaner_a86f390999d60ee10a0e53a5946369d9d}{}\label{classCleaner_a86f390999d60ee10a0e53a5946369d9d}
+
+\begin{DoxyCompactList}\small\item\em Destructor for \hyperlink{classCleaner}{Cleaner} Class. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Additional Inherited Members}
+
+
+\subsection{Detailed Description}
+\hyperlink{classCleaner}{Cleaner} class This class is a protected derived class of base class \hyperlink{classGoals}{Goals}. This class contains functions which initialize action client. This class also uses functions from \hyperlink{classGoals}{Goals} class to send goals sequentially to move\+\_\+base. 
+
+\subsection{Constructor \& Destructor Documentation}
+\index{Cleaner@{Cleaner}!Cleaner@{Cleaner}}
+\index{Cleaner@{Cleaner}!Cleaner@{Cleaner}}
+\subsubsection[{\texorpdfstring{Cleaner(std\+::vector$<$ std\+::vector$<$ double $>$$>$ \&\+\_\+\+Goals)}{Cleaner(std::vector< std::vector< double >> &_Goals)}}]{\setlength{\rightskip}{0pt plus 5cm}Cleaner\+::\+Cleaner (
+\begin{DoxyParamCaption}
+\item[{std\+::vector$<$ std\+::vector$<$ double $>$$>$ \&}]{\+\_\+\+Goals}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [explicit]}}\hypertarget{classCleaner_abca01c3dfb02f02c20a3ec278bb874ba}{}\label{classCleaner_abca01c3dfb02f02c20a3ec278bb874ba}
+
+
+Constructor for \hyperlink{classCleaner}{Cleaner} Class Takes Goal Points in \+\_\+\+Goals and stores them in a vetor of vectors named Goal\+\_\+\+Points. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em \+\_\+\+Goals} & vector of vectors of type double \\
+\hline
+\end{DoxyParams}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+include/\hyperlink{Cleaner_8h}{Cleaner.\+h}\item 
+src/\hyperlink{Cleaner_8cpp}{Cleaner.\+cpp}\end{DoxyCompactItemize}

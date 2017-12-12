@@ -1,0 +1,4 @@
+<map id="Graphical Class Hierarchy" name="Graphical Class Hierarchy">
+<area shape="rect" id="node1" href="$classGoals.html" title="Goals class This class is a base class which contains general use functions. This class contains func..." alt="" coords="5,5,61,32"/>
+<area shape="rect" id="node2" href="$classCleaner.html" title="Cleaner class This class is a protected derived class of base class Goals. This class contains functi..." alt="" coords="109,5,176,32"/>
+</map>

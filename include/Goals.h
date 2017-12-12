@@ -46,8 +46,6 @@ class Goals{
  public:  // Public Access Specifier
 /**
  * @brief Constructor for Goals Class
- * @param None
- * @return void None
  */
 Goals();
 
@@ -55,29 +53,27 @@ Goals();
  * @brief Set_Current_X a function to set goal's X coordinate.
  *        This function sets the goal's X coordinate when given a goal point.
  * @param Next_Goal is a Goal point of type double vector.
- * @param goal is an instance of a message of type move_base_msgs::MoveBaseGoal
+ * @param goal_point is a message of type move_base_msgs::MoveBaseGoal
  * @return double type Goal Point's X coordinate.
  */
 double Set_Current_X(std::vector<double>& Next_Goal,
-                        move_base_msgs::MoveBaseGoal & goal);
+                        move_base_msgs::MoveBaseGoal & goal_point);
 
 /**
  * @brief Set_Current_Y a function to set goal's Y coordinate.
  *        This function sets the goal's Y coordinate when given a goal point.
  * @param Next_Goal is a Goal point of type double vector.
- * @param goal is an instance of a message of type move_base_msgs::MoveBaseGoal
+ * @param goal_point is a message of type move_base_msgs::MoveBaseGoal
  * @return double type Goal Point's Y coordinate.
  */
 double Set_Current_Y(std::vector<double>& Next_Goal,
-                        move_base_msgs::MoveBaseGoal & goal);
+                        move_base_msgs::MoveBaseGoal & goal_point);
 
 /** Get_Goal of type double vector, Stores Current Goal Point Data */
 std::vector<double> Get_Goal;
 
 /**
  * @brief Destructor for Goals Class
- * @param None
- * @return void None
  */
 virtual ~Goals();
 
@@ -89,11 +85,13 @@ std::vector<std::vector<double>> Goal_Points;
  * @brief Set_Current_Orientation a function to set goal's Orientation.
  *        This function sets the goal's orientation when given a goal point.
  * @param Next_Goal is a Goal point of type double vector.
- * @param goal is an instance of a message of type move_base_msgs::MoveBaseGoal
- * @return void None.
+ * @param goal_point is a message of type move_base_msgs::MoveBaseGoal
  */
 void Set_Current_Orientation(std::vector<double>& Next_Goal,
-                        move_base_msgs::MoveBaseGoal & goal);
-};
+                        move_base_msgs::MoveBaseGoal & goal_point);
 
+ private:
+/** Create move_base message to send goal*/
+move_base_msgs::MoveBaseGoal goal_point;
+};
 #endif  // CATKIN_WS_SRC_VACUUM_BOT_INCLUDE_GOALS_H_

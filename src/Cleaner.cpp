@@ -32,7 +32,6 @@
 
 /* --Includes-- */
 #include <vector>
-#include "../include/Goals.h"
 #include "../include/Cleaner.h"
 
 Cleaner::Cleaner(std::vector<std::vector<double>>& _Goals) {
@@ -48,7 +47,6 @@ void Cleaner::Clean_Room() {
     ROS_INFO("Waiting for the move_base action server to come up");
   }
   ROS_INFO("Connected to move_base action server");
-  move_base_msgs::MoveBaseGoal goal;
   for (auto Next_Goal : Goal_Points) {
   Cleaner::Set_Current_X(Next_Goal, goal);  // Set goal's X coordinate
   Cleaner::Set_Current_Y(Next_Goal, goal);  // Set goal's Y coordinate

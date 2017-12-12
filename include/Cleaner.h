@@ -1,5 +1,5 @@
 /**
- * @file cleaner.h
+ * @file Cleaner.h
  * @brief This file contains function declarations for Cleaner class. 
  * 
  *
@@ -45,22 +45,22 @@ class Cleaner:protected Goals {
  public:  // Public access specifier
 /**
  * @brief Constructor for Cleaner Class
- *        Takes Goal Points and stores them in a vetor of vectors.
- * @param Goal_Points vector of vectors of type double
- * @return void None
+ *        Takes Goal Points in _Goals and stores them in a vetor of vectors
+ *        named Goal_Points.
+ * @param _Goals vector of vectors of type double
  */
-explicit Cleaner(std::vector<std::vector<double>>& Goal_Points);
+explicit Cleaner(std::vector<std::vector<double>>& _Goals);
 /**
  * @brief Clean_Room Initializes action client to communicate with move_base
  *                   This function sends goals to move_base.
- * @return void None
  */
 void Clean_Room();
 /**
  * @brief Destructor for Cleaner Class
- * @param None
- * @return void None
  */
 virtual ~Cleaner();
+ private:
+/** Create move_base message to send goal*/
+move_base_msgs::MoveBaseGoal goal;
 };
 #endif  // CATKIN_WS_SRC_VACUUM_BOT_INCLUDE_CLEANER_H_

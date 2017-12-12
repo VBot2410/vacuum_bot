@@ -1,0 +1,132 @@
+\hypertarget{classGoals}{}\section{Goals Class Reference}
+\label{classGoals}\index{Goals@{Goals}}
+
+
+\hyperlink{classGoals}{Goals} class This class is a base class which contains general use functions. This class contains functions which sets goal point\textquotesingle{}s X,Y,orientation.  
+
+
+
+
+{\ttfamily \#include $<$Goals.\+h$>$}
+
+
+
+Inheritance diagram for Goals\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=130pt]{classGoals__inherit__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classGoals_a6b686b508f96f56d28ab0c1f8c15f5b2}{Goals} ()\hypertarget{classGoals_a6b686b508f96f56d28ab0c1f8c15f5b2}{}\label{classGoals_a6b686b508f96f56d28ab0c1f8c15f5b2}
+
+\begin{DoxyCompactList}\small\item\em Constructor for \hyperlink{classGoals}{Goals} Class. \end{DoxyCompactList}\item 
+double \hyperlink{classGoals_a587309b801df2c5c805e3c8c1bfddfea}{Set\+\_\+\+Current\+\_\+X} (std\+::vector$<$ double $>$ \&Next\+\_\+\+Goal, move\+\_\+base\+\_\+msgs\+::\+Move\+Base\+Goal \&goal\+\_\+point)
+\begin{DoxyCompactList}\small\item\em Set\+\_\+\+Current\+\_\+X a function to set goal\textquotesingle{}s X coordinate. This function sets the goal\textquotesingle{}s X coordinate when given a goal point. \end{DoxyCompactList}\item 
+double \hyperlink{classGoals_a815209daf633d7a3a64a1a3a5605cdd0}{Set\+\_\+\+Current\+\_\+Y} (std\+::vector$<$ double $>$ \&Next\+\_\+\+Goal, move\+\_\+base\+\_\+msgs\+::\+Move\+Base\+Goal \&goal\+\_\+point)
+\begin{DoxyCompactList}\small\item\em Set\+\_\+\+Current\+\_\+Y a function to set goal\textquotesingle{}s Y coordinate. This function sets the goal\textquotesingle{}s Y coordinate when given a goal point. \end{DoxyCompactList}\item 
+virtual \hyperlink{classGoals_a3a48604490cad549dfbb30fbedbf3d54}{$\sim$\+Goals} ()\hypertarget{classGoals_a3a48604490cad549dfbb30fbedbf3d54}{}\label{classGoals_a3a48604490cad549dfbb30fbedbf3d54}
+
+\begin{DoxyCompactList}\small\item\em Destructor for \hyperlink{classGoals}{Goals} Class. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+std\+::vector$<$ double $>$ \hyperlink{classGoals_a55d63f2dacadc111b312e6f22f7a33ba}{Get\+\_\+\+Goal}
+\end{DoxyCompactItemize}
+\subsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{classGoals_a1aded121d6fdcad38f627b46961b58d0}{Set\+\_\+\+Current\+\_\+\+Orientation} (std\+::vector$<$ double $>$ \&Next\+\_\+\+Goal, move\+\_\+base\+\_\+msgs\+::\+Move\+Base\+Goal \&goal\+\_\+point)
+\begin{DoxyCompactList}\small\item\em Set\+\_\+\+Current\+\_\+\+Orientation a function to set goal\textquotesingle{}s Orientation. This function sets the goal\textquotesingle{}s orientation when given a goal point. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+std\+::vector$<$ std\+::vector$<$ double $>$ $>$ \hyperlink{classGoals_ad6033ccf299d860e3d5bb826ea5a8bb6}{Goal\+\_\+\+Points}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+\hyperlink{classGoals}{Goals} class This class is a base class which contains general use functions. This class contains functions which sets goal point\textquotesingle{}s X,Y,orientation. 
+
+\subsection{Member Function Documentation}
+\index{Goals@{Goals}!Set\+\_\+\+Current\+\_\+\+Orientation@{Set\+\_\+\+Current\+\_\+\+Orientation}}
+\index{Set\+\_\+\+Current\+\_\+\+Orientation@{Set\+\_\+\+Current\+\_\+\+Orientation}!Goals@{Goals}}
+\subsubsection[{\texorpdfstring{Set\+\_\+\+Current\+\_\+\+Orientation(std\+::vector$<$ double $>$ \&\+Next\+\_\+\+Goal, move\+\_\+base\+\_\+msgs\+::\+Move\+Base\+Goal \&goal\+\_\+point)}{Set_Current_Orientation(std::vector< double > &Next_Goal, move_base_msgs::MoveBaseGoal &goal_point)}}]{\setlength{\rightskip}{0pt plus 5cm}void Goals\+::\+Set\+\_\+\+Current\+\_\+\+Orientation (
+\begin{DoxyParamCaption}
+\item[{std\+::vector$<$ double $>$ \&}]{Next\+\_\+\+Goal, }
+\item[{move\+\_\+base\+\_\+msgs\+::\+Move\+Base\+Goal \&}]{goal\+\_\+point}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [protected]}}\hypertarget{classGoals_a1aded121d6fdcad38f627b46961b58d0}{}\label{classGoals_a1aded121d6fdcad38f627b46961b58d0}
+
+
+Set\+\_\+\+Current\+\_\+\+Orientation a function to set goal\textquotesingle{}s Orientation. This function sets the goal\textquotesingle{}s orientation when given a goal point. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em Next\+\_\+\+Goal} & is a Goal point of type double vector. \\
+\hline
+{\em goal\+\_\+point} & is a message of type move\+\_\+base\+\_\+msgs\+::\+Move\+Base\+Goal \\
+\hline
+\end{DoxyParams}
+\index{Goals@{Goals}!Set\+\_\+\+Current\+\_\+X@{Set\+\_\+\+Current\+\_\+X}}
+\index{Set\+\_\+\+Current\+\_\+X@{Set\+\_\+\+Current\+\_\+X}!Goals@{Goals}}
+\subsubsection[{\texorpdfstring{Set\+\_\+\+Current\+\_\+\+X(std\+::vector$<$ double $>$ \&\+Next\+\_\+\+Goal, move\+\_\+base\+\_\+msgs\+::\+Move\+Base\+Goal \&goal\+\_\+point)}{Set_Current_X(std::vector< double > &Next_Goal, move_base_msgs::MoveBaseGoal &goal_point)}}]{\setlength{\rightskip}{0pt plus 5cm}double Goals\+::\+Set\+\_\+\+Current\+\_\+X (
+\begin{DoxyParamCaption}
+\item[{std\+::vector$<$ double $>$ \&}]{Next\+\_\+\+Goal, }
+\item[{move\+\_\+base\+\_\+msgs\+::\+Move\+Base\+Goal \&}]{goal\+\_\+point}
+\end{DoxyParamCaption}
+)}\hypertarget{classGoals_a587309b801df2c5c805e3c8c1bfddfea}{}\label{classGoals_a587309b801df2c5c805e3c8c1bfddfea}
+
+
+Set\+\_\+\+Current\+\_\+X a function to set goal\textquotesingle{}s X coordinate. This function sets the goal\textquotesingle{}s X coordinate when given a goal point. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em Next\+\_\+\+Goal} & is a Goal point of type double vector. \\
+\hline
+{\em goal\+\_\+point} & is a message of type move\+\_\+base\+\_\+msgs\+::\+Move\+Base\+Goal \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+double type Goal Point\textquotesingle{}s X coordinate. 
+\end{DoxyReturn}
+\index{Goals@{Goals}!Set\+\_\+\+Current\+\_\+Y@{Set\+\_\+\+Current\+\_\+Y}}
+\index{Set\+\_\+\+Current\+\_\+Y@{Set\+\_\+\+Current\+\_\+Y}!Goals@{Goals}}
+\subsubsection[{\texorpdfstring{Set\+\_\+\+Current\+\_\+\+Y(std\+::vector$<$ double $>$ \&\+Next\+\_\+\+Goal, move\+\_\+base\+\_\+msgs\+::\+Move\+Base\+Goal \&goal\+\_\+point)}{Set_Current_Y(std::vector< double > &Next_Goal, move_base_msgs::MoveBaseGoal &goal_point)}}]{\setlength{\rightskip}{0pt plus 5cm}double Goals\+::\+Set\+\_\+\+Current\+\_\+Y (
+\begin{DoxyParamCaption}
+\item[{std\+::vector$<$ double $>$ \&}]{Next\+\_\+\+Goal, }
+\item[{move\+\_\+base\+\_\+msgs\+::\+Move\+Base\+Goal \&}]{goal\+\_\+point}
+\end{DoxyParamCaption}
+)}\hypertarget{classGoals_a815209daf633d7a3a64a1a3a5605cdd0}{}\label{classGoals_a815209daf633d7a3a64a1a3a5605cdd0}
+
+
+Set\+\_\+\+Current\+\_\+Y a function to set goal\textquotesingle{}s Y coordinate. This function sets the goal\textquotesingle{}s Y coordinate when given a goal point. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em Next\+\_\+\+Goal} & is a Goal point of type double vector. \\
+\hline
+{\em goal\+\_\+point} & is a message of type move\+\_\+base\+\_\+msgs\+::\+Move\+Base\+Goal \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+double type Goal Point\textquotesingle{}s Y coordinate. 
+\end{DoxyReturn}
+
+
+\subsection{Member Data Documentation}
+\index{Goals@{Goals}!Get\+\_\+\+Goal@{Get\+\_\+\+Goal}}
+\index{Get\+\_\+\+Goal@{Get\+\_\+\+Goal}!Goals@{Goals}}
+\subsubsection[{\texorpdfstring{Get\+\_\+\+Goal}{Get_Goal}}]{\setlength{\rightskip}{0pt plus 5cm}std\+::vector$<$double$>$ Goals\+::\+Get\+\_\+\+Goal}\hypertarget{classGoals_a55d63f2dacadc111b312e6f22f7a33ba}{}\label{classGoals_a55d63f2dacadc111b312e6f22f7a33ba}
+Get\+\_\+\+Goal of type double vector, Stores Current Goal Point Data \index{Goals@{Goals}!Goal\+\_\+\+Points@{Goal\+\_\+\+Points}}
+\index{Goal\+\_\+\+Points@{Goal\+\_\+\+Points}!Goals@{Goals}}
+\subsubsection[{\texorpdfstring{Goal\+\_\+\+Points}{Goal_Points}}]{\setlength{\rightskip}{0pt plus 5cm}std\+::vector$<$std\+::vector$<$double$>$ $>$ Goals\+::\+Goal\+\_\+\+Points\hspace{0.3cm}{\ttfamily [protected]}}\hypertarget{classGoals_ad6033ccf299d860e3d5bb826ea5a8bb6}{}\label{classGoals_ad6033ccf299d860e3d5bb826ea5a8bb6}
+Goal\+\_\+\+Points of type vector of double vectors, Stores all Goal Points 
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+include/\hyperlink{Goals_8h}{Goals.\+h}\item 
+src/\hyperlink{Goals_8cpp}{Goals.\+cpp}\end{DoxyCompactItemize}
