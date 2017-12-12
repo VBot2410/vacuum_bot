@@ -9,7 +9,7 @@
   <arg name="initial_pose_x" default="0"/>
   <arg name="initial_pose_y" default="0"/>
   <arg name="initial_pose_a" default="0"/>
-  <include file="$(find vacuum_bot)/launch/include/amcl/amcl.launch.xml">
+  <include file="$(find vacuum_bot)/launch/include/amcl.launch.xml">
     <arg name="initial_pose_x" value="$(arg initial_pose_x)"/>
     <arg name="initial_pose_y" value="$(arg initial_pose_y)"/>
     <arg name="initial_pose_a" value="$(arg initial_pose_a)"/>
