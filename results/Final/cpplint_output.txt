@@ -1,0 +1,9 @@
+Done processing ./include/Cleaner.h
+Done processing ./include/Goals.h
+Done processing ./src/main.cpp
+Done processing ./src/Goals.cpp
+Done processing ./src/Cleaner.cpp
+Done processing ./test/Cleaner_Test.cpp
+Done processing ./test/main.cpp
+Done processing ./test/Goals_Test.cpp
+Total errors found: 0
