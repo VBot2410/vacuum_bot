@@ -97,7 +97,7 @@ if(CATKIN_ENABLE_TESTING)
 
   add_rostest_gtest(
     vacuum_bot_test
-    launch/vacuum_bot_test.launch
+    test/vacuum_bot_test.launch
     test/Cleaner_Test.cpp
     test/Goals_Test.cpp
     test/main.cpp

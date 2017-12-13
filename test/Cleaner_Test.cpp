@@ -36,8 +36,8 @@
 
 
 /**
- * @brief      Tests whether the client fails to come online
- *             when server is offline.        
+ * @brief      Tests whether client comes online
+ *             when map server is online.        
  *
  * @param[in]  TESTSuite                 gtest framework
  * @param[in]  Server_Existance_Test     Test Name
@@ -51,7 +51,7 @@ TEST(TESTSuite, Server_Existance_Test) {
                                           ac("move_base", true);
   // Check the Existence of Service
   bool exists(ac.waitForServer(ros::Duration(10)));
-  EXPECT_FALSE(exists);
+  EXPECT_TRUE(exists);
 }
 
 /**
