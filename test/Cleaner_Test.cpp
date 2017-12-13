@@ -51,7 +51,7 @@ TEST(TESTSuite, Server_Existance_Test) {
                                           ac("move_base", true);
   // Check the Existence of Service
   bool exists(ac.waitForServer(ros::Duration(10)));
-  EXPECT_TRUE(exists);
+  EXPECT_FALSE(exists);
 }
 
 /**

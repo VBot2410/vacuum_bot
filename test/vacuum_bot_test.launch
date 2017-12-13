@@ -3,17 +3,6 @@ Used for launching all tests.
 -->
 
 <launch>
-  <!--  Launch turtle bot world  -->
-  <include file="$(find vacuum_bot)/launch/vacuum_bot_world.launch">
-    <arg name="world_file" value="$(find vacuum_bot)/world/hotel_room.world"/>
-    <arg name="gui" value="0"/>
-  </include>
-
-  <!-- Launch navigation stack with amcl -->
-  <include file="$(find vacuum_bot)/launch/vacuum_bot_amcl.launch">
-    <arg name="map_file" value="$(find vacuum_bot)/map/hotel_room_map.yaml"/>
-  </include>
-
   <node pkg="vacuum_bot" name="Clean"  type="Clean" />
   <test pkg="vacuum_bot" test-name="vacuum_bot_test" type="vacuum_bot_test" />
 </launch>
