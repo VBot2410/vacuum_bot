@@ -2,10 +2,210 @@ Implementation of a Cleaning Robot on Turtle\+Bot  \href{https://travis-ci.org/V
 
 \subsection*{Overview}
 
+This package uses Gazebo simulation of Turtlebot to implement a vacuum cleaning robot. It utilizes R\+OS navigation stack to drive the robot autonomously in a known map. The pattern it follows is given by a set of goals.  This system is capable of following a predefined pattern to clean the room and avoid obstacles in its surroundings while completing its task. At the end of its task, it will return to its Home Location and be ready for next use.
+
+\subsection*{Description}
+
+\subsubsection*{Navigation Stack}
+
+Navigation stack takes in information from odometry, sensor streams, and a goal pose and outputs safe velocity commands that are sent to a mobile base. For more information on Navigation Stack, see \href{http://wiki.ros.org/navigation}{\tt navigation} \subsubsection*{Node}
+
+This package contains a node named Clean which utilizes an implementation of R\+OS actionlib package. actionlib provides simple action specifications like goal, feedback, result in form of R\+OS actions. For more information on actionlib, see \href{http://wiki.ros.org/actionlib}{\tt actionlib} \subsubsection*{move\+\_\+base}
+
+The move\+\_\+base package provides an implementation of an \href{http://wiki.ros.org/actionlib}{\tt action} that, given a goal in the world, will attempt to reach it with a mobile base. We have used move\+\_\+base\+\_\+msgs for this implementation. move\+\_\+base\+\_\+msgs contains the messages used to communicate with move\+\_\+base node. For more information on move\+\_\+base, see \href{http://wiki.ros.org/move_base}{\tt move\+\_\+base} \subsubsection*{Mapping}
+
+The world was built in Gazebo and R\+OS gmapping package was used for creating the map. For more information, See \href{http://wiki.ros.org/turtlebot_navigation/Tutorials/Build%20a%20map%20with%20SLAM}{\tt Map Building}
+
+\subsection*{Personnel}
+
+This package is developed and maintained by Robotics Grduate Student {\bfseries Vaibhav Bhilare} as a part of Fall 2017 term Final Project for course E\+N\+PM 808X, Software Development for Robotics at University of Maryland, College Park.
+
+\subsection*{Disclaimer}
+
+M\+IT License
+
+Copyright (c) 2017 Vaibhav Bhilare
+
+Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the \char`\"{}\+Software\char`\"{}), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions\+:
+
+The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
+
+T\+HE S\+O\+F\+T\+W\+A\+RE IS P\+R\+O\+V\+I\+D\+ED \char`\"{}\+A\+S I\+S\char`\"{}, W\+I\+T\+H\+O\+UT W\+A\+R\+R\+A\+N\+TY OF A\+NY K\+I\+ND, E\+X\+P\+R\+E\+SS OR I\+M\+P\+L\+I\+ED, I\+N\+C\+L\+U\+D\+I\+NG B\+UT N\+OT L\+I\+M\+I\+T\+ED TO T\+HE W\+A\+R\+R\+A\+N\+T\+I\+ES OF M\+E\+R\+C\+H\+A\+N\+T\+A\+B\+I\+L\+I\+TY, F\+I\+T\+N\+E\+SS F\+OR A P\+A\+R\+T\+I\+C\+U\+L\+AR P\+U\+R\+P\+O\+SE A\+ND N\+O\+N\+I\+N\+F\+R\+I\+N\+G\+E\+M\+E\+NT. IN NO E\+V\+E\+NT S\+H\+A\+LL T\+HE A\+U\+T\+H\+O\+RS OR C\+O\+P\+Y\+R\+I\+G\+HT H\+O\+L\+D\+E\+RS BE L\+I\+A\+B\+LE F\+OR A\+NY C\+L\+A\+IM, D\+A\+M\+A\+G\+ES OR O\+T\+H\+ER L\+I\+A\+B\+I\+L\+I\+TY, W\+H\+E\+T\+H\+ER IN AN A\+C\+T\+I\+ON OF C\+O\+N\+T\+R\+A\+CT, T\+O\+RT OR O\+T\+H\+E\+R\+W\+I\+SE, A\+R\+I\+S\+I\+NG F\+R\+OM, O\+UT OF OR IN C\+O\+N\+N\+E\+C\+T\+I\+ON W\+I\+TH T\+HE S\+O\+F\+T\+W\+A\+RE OR T\+HE U\+SE OR O\+T\+H\+ER D\+E\+A\+L\+I\+N\+GS IN T\+HE S\+O\+F\+T\+W\+A\+RE.
+
 \subsection*{Dependencies}
+
+\subsubsection*{R\+OS}
+
+R\+OS should be installed on the system. This package is tested on Ubuntu 16.\+04 L\+TS with \href{http://wiki.ros.org/kinetic}{\tt R\+OS Kinetic Desktop-\/\+Full Distribution}.~\newline
+ Installation Instructions can be found \href{http://wiki.ros.org/kinetic/Installation}{\tt here}. \subsubsection*{catkin}
+
+catkin is a Low-\/level build system macros and infrastructure for R\+OS.~\newline
+ catkin is included by default when R\+OS is installed. It can also be installed with apt-\/get 
+\begin{DoxyCode}
+1 $ sudo apt-get install ros-kinetic-catkin
+\end{DoxyCode}
+ \subsubsection*{Gazebo}
+
+Gazebo was used to build the world and is required to visualize the demo. To launch the demo, Gazebo should be installed. ~\newline
+ Installation instructions can be found \href{http://gazebosim.org/download}{\tt here} \subsubsection*{rviz}
+
+rviz is used for displaying sensor data and state information from R\+OS. rviz is included by default when R\+OS Kinetic Desktop-\/\+Full is installed. \subsubsection*{turtlebot simulation}
+
+To install Turtlebot simulation stack use following command\+: 
+\begin{DoxyCode}
+1 $ sudo apt-get install ros-kinetic-turtlebot-gazebo ros-kinetic-turtlebot-apps
+       ros-kinetic-turtlebot-rviz-launchers
+\end{DoxyCode}
+ \subsubsection*{Package Dependency}
+
+
+\begin{DoxyItemize}
+\item roscpp
+\item rospy
+\item actionlib
+\item actionlib\+\_\+msgs
+\item geometry\+\_\+msgs
+\item move\+\_\+base\+\_\+msgs
+\item std\+\_\+msgs
+\item tf
+\item rostest
+\item turtlebot\+\_\+gazebo
+\end{DoxyItemize}
+
+\subsection*{Solo Iterative Process (S\+IP)}
+
+This package was developed using Solo Iterative Process.~\newline
+ S\+IP Google sheet can be found \href{https://docs.google.com/spreadsheets/d/1xJOBrPESNhSnJeYWHMUa0bzHvRnpLpRPEiKgT72gR60/edit?usp=sharing}{\tt here} ~\newline
+ Sprint Planning and Review notes can be found \href{https://docs.google.com/document/d/1MplUpR0tAjvwMJLPFIJioawKSmGYAsTr-fAWhTBEiD0/edit?usp=sharing}{\tt here}
+
+\subsection*{Known issues/bugs}
+
+$\sim$$\sim$\+Scaled Objects change shape when reloading a model in Gazebo.$\sim$$\sim$ ~\newline
+ $\sim$$\sim$\+Robot keeps rotating at one location rather than moving to the goal.$\sim$$\sim$ ~\newline
+ None
 
 \subsection*{Build Instructions}
 
-\subsection*{Running the Demo}
+\subsubsection*{Creating a catkin workspace}
 
-\subsection*{Running the Tests}
+Create a catkin workspace using following instructions\+: 
+\begin{DoxyCode}
+1 $ mkdir -p ~/catkin\_ws/src
+2 $ cd ~/catkin\_ws/
+3 $ catkin\_make
+\end{DoxyCode}
+ Running catkin\+\_\+make command the first time in your workspace will create a C\+Make\+Lists.\+txt link in your \textquotesingle{}src\textquotesingle{} folder. Before continuing source your new setup.$\ast$sh file\+: 
+\begin{DoxyCode}
+1 $ source devel/setup.bash
+\end{DoxyCode}
+ \subsubsection*{Building the Package inside catkin workspace}
+
+Clone the package in src folder of catkin workspace using following commands\+: 
+\begin{DoxyCode}
+1 $ cd ~/catkin\_ws/src/
+2 $ git clone https://github.com/VBot2410/vacuum\_bot.git
+\end{DoxyCode}
+ Then build the package using following commands\+: 
+\begin{DoxyCode}
+1 $ cd ~/catkin\_ws/
+2 $ catkin\_make
+\end{DoxyCode}
+
+
+\subsection*{Running The Demo}
+
+Open a terminal and run following commands\+: 
+\begin{DoxyCode}
+1 $ cd ~/catkin\_ws
+2 $ source devel/setup.bash
+3 $ roslaunch vacuum\_bot vacuum\_bot.launch
+\end{DoxyCode}
+ \subsubsection*{Rebuilding the map using gmapping}
+
+Though not a part of final deliverable, We have also added the script developed for gmapping using turtlebot navigation package.~\newline
+ Run following commands\+: 
+\begin{DoxyCode}
+1 $ cd ~/catkin\_ws
+2 $ source devel/setup.bash
+3 $ roslaunch vacuum\_bot vacuum\_bot\_gmapping.launch
+\end{DoxyCode}
+ After running above commands, open a new terminal and run following command\+: 
+\begin{DoxyCode}
+1 $ roslaunch turtlebot\_teleop keyboard\_teleop.launch
+\end{DoxyCode}
+ Drive the robot around to cover the full map. For more information, see \href{http://wiki.ros.org/turtlebot_navigation/Tutorials/Build%20a%20map%20with%20SLAM}{\tt turtlebot\+\_\+navigation tutorial} ~\newline
+ After having a good map, open a new terminal and save the map to file using following command\+: 
+\begin{DoxyCode}
+1 $ rosrun map\_server map\_saver -f /home/<username>/catkin\_ws/src/vacuum\_bot/map/hotel\_room\_map
+\end{DoxyCode}
+ {\bfseries Note}\+: Do not close the gmapping launch until saving the map.
+
+\subsection*{Recording Bag files and how to Enable/\+Disable Recording\+:}
+
+Running the above command sets the record argument in launch file to {\itshape false} by default. To enable rebag recording, simply add {\bfseries record\+:=true} to the launch command. The new commands will be\+: 
+\begin{DoxyCode}
+1 $ cd ~/catkin\_ws
+2 $ source devel/setup.bash
+3 $ roslaunch vacuum\_bot vacuum\_bot.launch record:=true
+\end{DoxyCode}
+ This will generate a file named rosbag\+\_\+recording.\+bag in results subdirectory. To disable the recording, use the default argument or specify {\bfseries record\+:=false}. \subsubsection*{Inspecting the bag file}
+
+For inspecting the recorded rosbag file, run following commands\+: 
+\begin{DoxyCode}
+1 $ cd ~/catkin\_ws/src/vacuum\_bot/results
+2 $ rosbag info rosbag\_recording.bag
+\end{DoxyCode}
+ \subsubsection*{Playing Back the bag file}
+
+To play the recorded bag file, use following instructions\+: In a terminal, type following command\+: 
+\begin{DoxyCode}
+1 $ roscore
+\end{DoxyCode}
+ Open a new terminal and run following commands\+: 
+\begin{DoxyCode}
+1 $ cd ~/catkin\_ws/src/vacuum\_bot/results
+2 $ rosbag play rosbag\_recording.bag
+\end{DoxyCode}
+ Open a new terminal and run following command\+: 
+\begin{DoxyCode}
+1 $ rqt\_console
+\end{DoxyCode}
+ This will open a rqt\+\_\+console which will play all the messages recorded in the bag file while recording.
+
+\subsection*{Testing}
+
+Tests for this package are written using rostest and gtest. To build the tests, run following commands\+: 
+\begin{DoxyCode}
+1 $ cd ~/catkin\_ws
+2 $ source devel/setup.bash
+3 $ catkin\_make run\_tests\_vacuum\_bot
+\end{DoxyCode}
+ To run the tests after building them in previous step, use following commands\+: 
+\begin{DoxyCode}
+1 $ cd ~/catkin\_ws
+2 $ source devel/setup.bash
+3 $ rostest vacuum\_bot vacuum\_bot\_test.launch
+\end{DoxyCode}
+ Output shown will be similar to the following\+: 
+\begin{DoxyCode}
+1 ... logging to /home/viki/.ros/log/rostest-ubuntu-3056.log
+2 [ROSUNIT] Outputting test results to
+       /home/viki/.ros/test\_results/vacuum\_bot/rostest-launch\_vacuum\_bot\_test.xml
+3 testvacuum\_bot\_test ... ok
+4 
+5 [ROSTEST]-----------------------------------------------------------------------
+6 
+7 [vacuum\_bot.rosunit-vacuum\_bot\_test/Server\_Existance\_Test][passed]
+8 [vacuum\_bot.rosunit-vacuum\_bot\_test/X\_Test][passed]
+9 [vacuum\_bot.rosunit-vacuum\_bot\_test/Y\_Test][passed]
+10 [vacuum\_bot.rosunit-vacuum\_bot\_test/Goal\_Test][passed]
+11 [vacuum\_bot.rosunit-vacuum\_bot\_test/Goal\_X\_Test][passed]
+12 [vacuum\_bot.rosunit-vacuum\_bot\_test/Goal\_Y\_Test][passed]
+13 
+14 SUMMARY
+15  * RESULT: SUCCESS
+16  * TESTS: 6
+17  * ERRORS: 0
+18  * FAILURES: 0
+\end{DoxyCode}
+ 
