@@ -121,7 +121,7 @@ $ source devel/setup.bash
 $ roslaunch vacuum_bot vacuum_bot.launch
 ```
 ### Rebuilding the map using gmapping
-Though not a part of final deliverable, We have also added the script developed for gmapping using turtlebot navigation package.<br />
+Though **not a part of final deliverable**, We have also added the script developed for gmapping using turtlebot navigation package.<br />
 Run following commands:
 ```
 $ cd ~/catkin_ws
@@ -140,7 +140,7 @@ $ rosrun map_server map_saver -f /home/<username>/catkin_ws/src/vacuum_bot/map/h
 **Note**: Do not close the gmapping launch until saving the map.
 
 ## Recording Bag files and how to Enable/Disable Recording:
-Running the above command sets the record argument in launch file to *false* by default. To enable rebag recording, simply add **record:=true** to the launch command.</br >
+Running the demo launch command sets the record argument in launch file to *false* by default. To enable rebag recording, simply add **record:=true** to the launch command.</br >
 The new commands will be:
 ```
 $ cd ~/catkin_ws
@@ -206,3 +206,8 @@ SUMMARY
  * ERRORS: 0
  * FAILURES: 0
 ```
+## Project Presentation And Demo
+### Presentation Video with Gazebo demo can be found [here](https://youtu.be/L4NH78Ymsps)
+### Gazebo Demo can be found [here](https://youtu.be/QoAIg1g_lWA)
+### RViz Demo can be found [here](https://youtu.be/ap7zxn24Si8)
+### PowerPoint Presentation file can be found [here](https://drive.google.com/file/d/1C4TkPUN_RbWLDyJ-lwqXit9o_GeN9osq/view?usp=sharing)
