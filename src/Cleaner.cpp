@@ -34,7 +34,7 @@
 #include <vector>
 #include "../include/Cleaner.h"
 
-Cleaner::Cleaner(std::vector<std::vector<double>>& _Goals) {
+Cleaner::Cleaner(const std::vector<std::vector<double>>& _Goals) {
 Goal_Points = _Goals;
 }
 

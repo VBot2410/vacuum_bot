@@ -49,7 +49,7 @@ class Cleaner:protected Goals {
  *        named Goal_Points.
  * @param _Goals vector of vectors of type double
  */
-explicit Cleaner(std::vector<std::vector<double>>& _Goals);
+explicit Cleaner(const std::vector<std::vector<double>>& _Goals);
 /**
  * @brief Clean_Room Initializes action client to communicate with move_base
  *                   This function sends goals to move_base.
